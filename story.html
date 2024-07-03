@@ -1,0 +1,217 @@
+<html>
+    <head> <title>Class Activity 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <link rel="icon" type="image/x-icon" href="Logo_last.png">
+      
+        <style>
+          
+          #storydiv { 
+                height: 100%;
+                position: relative;         
+              }
+                      
+            #storydiv p {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            
+            .maindiv{
+                border:5px ridge rgb(12, 96, 206);
+                margin:1%;
+                border-radius:20px
+            }
+
+            p{
+                font-size:30px;
+                font-weight: bold;
+            }
+
+           
+
+            #nextbtn, #backbtn, #newbtn{
+                width: 25%;
+                font-size:20px;
+                margin-right: 5%;
+                position: relative;
+                
+            }
+
+            #backbtn, #newbtn{
+                display:none;
+            }
+
+            #family{
+                width:95%;
+                height:95%;
+            }
+
+            #about{
+                font-weight: bold;
+                font-size:40px;
+                color:rgb(7, 7, 89)
+            }
+
+            #story{ 
+                font-size: 1.5vw;
+                border-radius: 20px;
+            }
+
+            #imgdiv{
+                position:relative;
+            }
+            .table,th,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+            font-size: 17px;
+        }
+        th,td{
+            padding: 12px;
+            text-align: center;
+        }
+         th{
+            color: red;
+
+         }
+        
+        </style>
+</head>
+
+    <body> 
+        <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+            <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+            <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+        </div>
+         <br>
+        <br>
+        
+        <center>
+            <h2 id="about"><i>The Mice </i></h2>
+            <div class="maindiv container-fluid" style="height:60%;">
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11 imgdiv">
+                   <img id="family" src="intro.jpg" style="width:100%;"> 
+               </div>
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11" id='storydiv'>
+                   <p id="story" style="text-align:left; width:100%;"> 
+
+                    Today we will take a close look at the third major type of linkers or connectors known as Subordinating Conjunctions.
+                                   
+                </p> 
+            </div>
+        </center>     
+        </div>
+        <br>
+        <div class="" style="text-align:center;">
+            
+            <button id="backbtn" onclick="backpic()" class="btn btn-success">Back</button>
+            <button id="nextbtn" onclick="update()" class="btn btn-success">Continue</button>
+            <button id="newbtn" onclick="newpage()" class="btn btn-success">Next</button>
+           
+                  
+        </div>
+     
+        </center>   
+
+        <script>
+
+            var images = ["Assets/1.jpg", "Assets/2.jpg", "Assets/3.jpg", "Assets/4.jpg", "Assets/5.jpg", "Assets/6.jpg","Assets/7.jpg","Assets/8.jpg","Assets/9.jpg","Assets/10.jpg","Assets/11.jpg","Assets/12.jpg","Assets/13.jpg","Assets/14.jpg","Assets/15.jpg","Assets/16.jpg","Assets/17.jpg","Assets/18.jpg","Assets/19.jpg","Assets/20.jpg","Assets/21.jpg","Assets/22.jpg","Assets/23.jpg","Assets/24.jpg","Assets/25.jpg"];
+
+            var para=[ "Mice live in our walls but do not trouble our kitchen. We are pleased but cannot understand why they do not come into our kitchen where we have traps set, <span style='color:blue'>as</span> they come into the kitchens of our neighbours. <span style='color:blue'>Although</span> we are pleased, we are also upset, <span style='color:blue'>because</span> the mice behave <span style='color:blue'>as though</span> there was something wrong with our kitchen. What makes this even more puzzling is that our house is much less tidy than the houses of our neighbours. There is more food lying about in our kitchen, more crumbs on the counters and filthy scraps of onion kicked against the base of the cabinets. ",
+
+                       "<span style='color:blue'>“We are pleased but cannot understand why they do not come into our kitchen where we have traps set, <span style='background-color:lightgray'>as</span> they come into the kitchens of our neighbours.”</span><br>In the above sentence, “as” is  a subordinating conjunction. <span style='color:blue'><u>Subordinating conjunctions are words that join an independent clause and a subordinating clause to bring about a cause-and-effect relationship between them.</u></span> “As” brings about a relationship of <u>reason</u> by linking two clauses “ <i>We are pleased but cannot understand why they do not come into our kitchen where we have traps set</i>” and “<i>as they come into the kitchens of our neighbours.</i>”  These connectors are known as subordinating conjunctions of reason.",
+
+                       "<span style='color:blue'><u>Because</u></span> brings about a relationship of <u>reason</u> by linking two clauses “Although we are pleased, we are also upset” and “because the mice behave as though there was something wrong with our kitchen.”<br><br><span style='color:blue'><u>As though</u></span> is a <u>subordinate conjunction of manner</u>. Subordinate conjunctions of manner show the way of doing something. Here, “As though” shows how the mice behaved.", 
+
+                       "In fact, I think that there is so much loose food in the kitchen that the mice themselves are defeated by it. In a tidy kitchen, it is a challenge for them to find enough food night after night to survive until spring. They patiently hunt and nibble hour after hour until they are satisfied. In our kitchen, however, they are faced with something so out of proportion to their experience that they cannot deal with it. They might venture out a few steps, but soon the overwhelming sights and smells drive them back into their holes, uncomfortable and embarrassed at not being able to scavenge as they should.",
+
+                       "<span style='background-color:yellow; padding:5px'>The interesting case of “AFTER”:</span><br><br>“<span style='color:blue'>In a tidy kitchen, it is a challenge for them to find enough food night after night to survive until spring.</span>”<br><br><ul><li>In the above sentence “after” is used as a preposition of time because it is followed by its object “night”.</li><li>When “after” begins a subordinate clause, it is used as ‘a subordinating conjunction of time”</li></ul>",
+
+                       "<span style='background-color:lightgray'>Subordinating conjunctions are used in the following seven cases:</span><ol><li>Comparison</li><li>Concession</li><li>Condition</li><li>Time</li><li>Place</li><li>Manner</li><li>Reason</li></ol>",
+
+                       "H: How<br>I:If, In case of, In order<br>T: Though<br>E: Even if, Even though<br>B: Before, Because<br>U: Unless, Until<br>S: So, So that, Since",
+
+                       "<span style='color:blue'>Subordinating Conjunctions for Concession:</span><br>Performs the function of <u>concession,</u> by conceding a point between an independent clause and a subordinate clause. They introduce a clause that presents a fact or idea which contradicts the main clause.<br> Examples include:<br>--> <span style='color:blue'><i>Although, Though, Even Though, Despite<i></span><br> Let us look at the sentences below for better clarity:<ol><li>Although she is ill, she will attend school.</li><li>Though he topped his class in the half-yearly exam, he is quite worried about the annual examination.</li></ol>",
+
+                       "<span style='color:blue'>Subordinating Conjunctions for Condition:</span><br>These linkers connect a dependent clause to an independent clause based on a particular condition or a piece of information.<br> Examples include:<br>--> <span style='color:blue'><i>Only if, If, Unless, Even if, Lest, In case, Assuming that, and Provided that.</i></span><br>Let us look at the sentences below for better clarity:<ol><li><i>Unless</i> she finishes her assignment, she cannot go home.</li><li>You will have to avail another transport, <i>in case</i> you miss the school bus.</li><li>Walk carefully <i>lest</i> you fall.</li></ol>",
+
+                       "<span style='color:blue'>Subordinating Conjunctions for Time:</span><br>These linkers connect a dependent clause to an independent clause to bring about a temporal relationship between them.<br> Examples include:<br>--> <span style='color:blue'><i>As soon as, As long as, Before, After, By the time, Once, Since, Now that, Until, Till, While, Whenever, When</i></span><br>Let us look at the sentences below for better clarity:<ol><li>After this session is over, we can have lunch.</li><li>I need to visit the doctor before my brother arrives.</li><li>Once my mother visited Iceland. </li><li>By the time you get ready, I will be home.</li></ol>",
+
+                       "<span style='color:blue'>Subordinating Conjunctions for Manner:</span><br><br>These linkers show the way of doing something.<br>Examples include:<br>--> <span style='color:blue'><i>As though, How, As if</i></span><br>Let us look at the sentences below for better clarity:<ol><li>My teacher sang a song as if she were a singer.</li><li>The police know how you all conducted the bank robbery. </li></ol>",
+
+                       "<span style='color:blue'>Subordinating Conjunctions for Reason:</span><br>These linkers connect a dependent clause to an independent clause based on a particular reason.<br>Examples include:<br>--> <span style='color:blue'><i> Since, Because, So that, That, In order, As</i></span><br>Let us look at the sentences below for better clarity:<ol><li>Lee Cooper has been manufacturing denim apparel since 1908.</li><li>I started my work early so that I could visit the doctor in the afternoon.</li></ol>",
+
+                      
+
+                
+
+                       
+                    ]
+            
+
+
+
+                    var i = -1;
+            function update(){
+                i++
+                document.getElementById("backbtn").style.display="inline-block"
+                if(i > para.length-1){
+                    document.getElementById("nextbtn").style.display="none"
+                    document.getElementById("newbtn").style.display="inline-block"
+                    document.getElementById("family").src = "last.jpg";
+                    document.getElementById("story").style.borderLeftStyle="solid"
+                    document.getElementById("story").style.borderLeftColor="rgb(164, 246, 229)"
+                    document.getElementById("about").innerHTML = "The Mice";
+                    document.getElementById("story").innerHTML = "1. She had to attend school despite her sickness.<br><br>When a dependent clause comes after an independent clause a comma is not needed. It is shown in the above example.<br><br>2. Despite her sickness, she had to attend school.<br><br> When an independent clause comes after a dependent clause a comma is needed. It is shown in the above example"
+                    
+                }
+                else{
+                    document.getElementById("story").style.fontSize="1.5vw"
+                    document.getElementById("story").style.backgroundColor="white"
+                    document.getElementById("about").innerHTML="The Mice "
+                     var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+              
+            }
+            };
+
+          
+
+            function backpic(){
+                i=i-1
+                console.log(i)
+
+                if(i<0){
+                    document.getElementById("story").style.fontSize="1.35vw"
+                    document.getElementById("backbtn").style.display="none"
+                    document.getElementById("nextbtn").style.display="inline-block"
+                    document.getElementById("family").src = "intro.jpg";
+                    document.getElementById("about").innerHTML="The Mice"
+                    document.getElementById("story").innerHTML = "<p id='story' style='text-align:left; width:100%;'>Today we will take a close look at the third major type of linkers or connectors known as Subordinating Conjunctions.</p>"
+                }
+                else{
+                document.getElementById("story").style.fontSize="1.5vw"
+                document.getElementById("story").style.backgroundColor="white"
+                document.getElementById("nextbtn").style.display="inline-block"
+                document.getElementById("about").innerHTML="The Mice "
+                var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+                }
+            }
+
+    
+    </script>
+        
+    </body>
+</html>
